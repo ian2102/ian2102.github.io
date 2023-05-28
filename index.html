@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>My Site!</title>
-    </head>
-    <body>
-        <h1>This is my GitHub pages website!</h1>
-    </body>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sky Quest</title>
+</head>
+<body>
+  <canvas id="bevy-canvas"></canvas>
+
+  <script>
+    async function loadBevyApp() {
+      const canvas = document.getElementById('bevy-canvas');
+
+      const { default: init, run } = await import('./sky-quest.js');
+
+      await init();
+
+      run(canvas);
+    }
+
+    loadBevyApp().catch(console.error);
+  </script>
+</body>
 </html>
