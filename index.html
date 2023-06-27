@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Sky Quest</title>
+  <title>Web App Selector</title>
   <style>
     html, body {
       margin: 0;
@@ -11,21 +11,23 @@
       height: 100%;
       overflow: hidden;
     }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #4287f5;
+      color: #ffffff;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
-  <script>
-    async function loadBevyApp() {
-      const canvas = document.getElementById('bevy-canvas');
-
-      const { default: init, run } = await import('./sky-quest.js');
-
-      await init();
-
-      run(canvas);
-    }
-
-    loadBevyApp().catch(console.error);
-  </script>
+  <div>
+    <a href="/sky-quest" class="button">Go to Sky Quest</a>
+    <a href="/monk-chat" class="button">Go to Monk Chat</a>
+  </div>
 </body>
 </html>
